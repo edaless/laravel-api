@@ -9,17 +9,14 @@ return new class extends Migration
 
     public function up()
     {
-        Schema::create('generes', function (Blueprint $table) {
+        Schema::create('movie_tag', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 64);
-            $table->text('description');
-            $table->timestamps();
         });
     }
 
 
     public function down()
     {
-        Schema::dropIfExists('generes');
+        Schema::dropIfExists('movie_tag');
     }
 };

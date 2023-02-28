@@ -12,4 +12,10 @@ class Tag extends Model
         'name',
         'description',
     ];
+
+
+    public function movies()
+    {
+        return $this->belongsToMany(Movie::class);
+    }
 }

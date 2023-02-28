@@ -9,17 +9,17 @@ return new class extends Migration
 
     public function up()
     {
-        Schema::create('movies', function (Blueprint $table) {
+        Schema::create('genres', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 64);
-            $table->year('year')->unsigned();
-            $table->integer('cashOut')->nullable();
+            $table->string('name', 64)->unique();
+            $table->text('description');
             $table->timestamps();
         });
     }
 
+
     public function down()
     {
-        Schema::dropIfExists('movies');
+        Schema::dropIfExists('genres');
     }
 };
