@@ -22,18 +22,18 @@ return new class extends Migration
     }
 
 
-    // public function down()
-    // {
-    //     Schema::table('movies', function (Blueprint $table) {
+    public function down()
+    {
+        Schema::table('movies', function (Blueprint $table) {
 
-    //         $table->dropForeign('movies_genre_id_foreign');
-    //     });
+            $table->dropForeign('movies_genre_id_foreign');
+        });
 
-    //     Schema::table('movie_tag', function (Blueprint $table) {
+        Schema::table('movie_tag', function (Blueprint $table) {
 
-    //         $table->dropForeign('movie_id_movie_id_foreign');
+            $table->dropForeign('movie_tag_movie_id_foreign');
 
-    //         $table->dropForeign('movie_id_tag_id_foreign');
-    //     });
-    // }
+            $table->dropForeign('movie_tag_tag_id_foreign');
+        });
+    }
 };
